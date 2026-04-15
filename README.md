@@ -1,84 +1,80 @@
-# Neural Machine Translation using Encoder-Decoder (Seq2Seq)
+# 🌐 Neural Machine Translation using Seq2Seq (Encoder-Decoder)
 
-## Overview
-This project implements a **Neural Machine Translation (NMT)** system using a **Sequence-to-Sequence (Seq2Seq) Encoder-Decoder architecture**. The model learns to translate text from a **source language to a target language** using deep learning techniques.
-
-Unlike traditional rule-based or statistical approaches, this model leverages **LSTM-based neural networks** to understand and generate language sequences effectively.
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-DeepLearning-orange)
+![NLP](https://img.shields.io/badge/Domain-NLP-green)
+![Status](https://img.shields.io/badge/Project-Completed-success)
 
 ---
 
-## Model Architecture
+## 📌 Overview
 
-The system is based on the Encoder-Decoder framework:
+This project implements a **Neural Machine Translation (NMT)** system using a **Sequence-to-Sequence (Seq2Seq) Encoder-Decoder architecture** with LSTM networks.
+
+The model learns to translate sentences from a **source language to a target language** by capturing contextual dependencies in sequential data.
+
+Unlike traditional statistical methods, this approach leverages **deep learning to generate more natural and context-aware translations**.
+
+---
+
+## 🧠 Architecture
+
+The model is based on the Seq2Seq framework:
 
 Input Sentence → Encoder (LSTM) → Context Vector → Decoder (LSTM) → Output Sentence
 
 ### 🔹 Encoder
-- Processes input sequence  
-- Encodes it into a fixed-length context vector  
+- Encodes input sequence into context vector  
+- Captures semantic meaning of the sentence  
 
 ### 🔹 Decoder
-- Takes context vector as input  
-- Generates translated sequence step-by-step  
+- Generates translated output step-by-step  
+- Uses previous outputs as input  
 
 ---
 
 ## ⚙️ Tech Stack
 
-- Python
-- TensorFlow / Keras 🤖  
+- Python  
+- TensorFlow / Keras  
 - NumPy  
 - Pandas  
-- Natural Language Processing (NLP)
+- NLP Techniques  
 
 ---
-
----
-
-## 📊 Dataset
-
-- Parallel corpus (source ↔ target language pairs)
-
-Example:
-
-English → French  
-Hello → Bonjour  
-How are you? → Comment ça va ?
 
 ---
 
 ## 🔄 Workflow
 
-### 1. Data Preprocessing
-- Lowercasing  
+### 1️⃣ Data Preprocessing
+- Text cleaning & normalization  
 - Tokenization  
 - Padding sequences  
-- Vocabulary indexing  
+- Vocabulary creation  
 
-### 2. Model Building
-- Encoder LSTM  
-- Decoder LSTM  
-- Dense + Softmax output layer  
+### 2️⃣ Model Building
+- Encoder (LSTM)  
+- Decoder (LSTM)  
+- Dense + Softmax layer  
 
-### 3. Training
-- Loss Function: `categorical_crossentropy`  
+### 3️⃣ Training
+- Loss: `categorical_crossentropy`  
 - Optimizer: `Adam`  
 - Technique: Teacher Forcing  
 
-### 4. Inference
+### 4️⃣ Inference
 - Generate translations word-by-word  
-- Uses trained encoder & decoder models  
+- Separate encoder-decoder models for prediction  
 
 ---
 
 ## 📈 Results
 
-The Neural Machine Translation model was successfully trained using the Encoder-Decoder (Seq2Seq) architecture.
-
 ### 🔹 Model Performance
-- The model is able to generate meaningful translations for simple and medium-length sentences  
-- Handles variable-length input and output sequences effectively  
-- Learns contextual relationships between words using LSTM networks  
+- Successfully translates basic and intermediate sentences  
+- Learns contextual relationships between words  
+- Handles variable-length sequences  
 
 ### 🔹 Sample Predictions
 
@@ -90,20 +86,13 @@ The Neural Machine Translation model was successfully trained using the Encoder-
 | Thank you     | Merci               |
 
 ### 🔹 Observations
-- The model performs well on frequently seen sentence patterns  
-- Translation quality decreases for:
-  - Long sentences  
-  - Rare or unseen words  
+- Performs well on common sentence structures  
+- Struggles with long or rare sequences  
 
 ### 🔹 Limitations
-- No attention mechanism (context bottleneck issue)  
-- Limited vocabulary size  
-- Basic Seq2Seq architecture  
-
-### 🔹 Evaluation (Optional Metrics)
-- Accuracy improves with training epochs  
-- Can be further evaluated using:
-  - BLEU Score  
-  - Perplexity  
+- No attention mechanism (information bottleneck)  
+- Limited vocabulary coverage  
 
 ---
+
+
